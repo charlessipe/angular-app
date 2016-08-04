@@ -34,6 +34,11 @@ angular
         controller: 'ReviewCtrl',
         controllerAs: 'review'
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashboard'
+      })
       .otherwise({
         redirectTo: '/'
       });
