@@ -29,6 +29,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/review', {
+        templateUrl: 'views/review.html',
+        controller: 'ReviewCtrl',
+        controllerAs: 'review'
+      })
       .otherwise({
         redirectTo: '/'
       });
