@@ -9,10 +9,49 @@
  */
 
 angular.module('angularAppApp')
-  .controller('MainCtrl', function ($scope, $http, current, places) {
+  .controller('MainCtrl', function ($scope, $http, current, places, $firebaseObject) {  
+
+    // See https://firebase.google.com/docs/web/setup#project_setup for how to
+    // auto-generate this config
+    var config = {
+      apiKey: "apiKey",
+      authDomain: "projectId.firebaseapp.com",
+      databaseURL: "https://survey-pop.firebaseio.com/"
+    };
+
+    firebase.initializeApp(config);
+
+    var surveyResponses = firebase.database().ref();
+
+    $scope.submitSurvey = function(){
+      var question1 = $scope.question1;
+      var question2 = $scope.question2;
+      var question3 = $scope.question3;
+
+      surveyResponses.push({ 
+        'question1': question1, 
+        'question2': question2,
+        'question3': question3  
+      });
+
+      console.log("survey submitted")
+    }
+    
+
+
+    //var ref = new Firebase("https://survey-pop.firebaseio.com/");
+
+    // download the data into a local object
+    $scope.data = surveyResponses;
+
+
+
     $scope.current = current.query();
 
-    console.log($scope.current);
+    setTimeout(function() { /*something*/ 
+      console.log($scope.data);
+    }, 1000);
+    
 
     //$scope.yelp = yelp.query();
 

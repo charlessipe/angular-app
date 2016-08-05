@@ -6,7 +6,7 @@
  * @description
  * # angularAppApp
  *
- * Main module of the application.
+ * Main module of the application.  // 'firebase',
  */
 angular
   .module('angularAppApp', [
@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -3,55 +3,13 @@
 
   <div class="row">
     <div class="col-sm-12">
-      <h1>Survey Pop User Dashboard</h1>
+      <h1>Survey Pop</h1>
       <h2>Find Out What Your Customers Are Thinking</h2>
       <p>Log In - Register</p>
-      <p>Your Business Name: Signature Pointe <input type="text" name="businessName" ng-model="businessName"></input> <button class="btn btn-sm btn-primary" ng-click="changeBusiness()">Edit</button></p>
-      <p><strong>Google Places Rating:</strong> {{places.result.rating}}</p>
-      <p><strong>Latest Google Reviews:</strong><p> 
-      <div class="panel panel-info">
-        <div class="panel-body">
-          Review
-        </div>
-        <div class="panel-footer"><p>{{places.result.reviews[0].text}} <strong>{{places.result.reviews[0].rating}} Stars</strong></p></div>
-      </div>
 
-      <div class="panel panel-info">
-        <div class="panel-body">
-          Review
-        </div>
-        <div class="panel-footer"><p>{{places.result.reviews[1].text}} <strong>{{places.result.reviews[1].rating}} Stars</strong></p></div>
-      </div>
-
-      <div class="panel panel-info">
-        <div class="panel-body">
-          Review
-        </div>
-        <div class="panel-footer"><p>{{places.result.reviews[2].text}} <strong>{{places.result.reviews[2].rating}} Stars</strong></p></div>
-      </div>
-
-      <div class="panel panel-info">
-        <div class="panel-body">
-          Review
-        </div>
-        <div class="panel-footer"><p>{{places.result.reviews[3].text}} <strong>{{places.result.reviews[3].rating}} Stars</strong></p></div>
-      </div>
-
-      <div class="panel panel-info">
-        <div class="panel-body">
-          Review
-        </div>
-        <div class="panel-footer"><p>{{places.result.reviews[4].text}} <strong>{{places.result.reviews[4].rating}} Stars</strong></p></div>
-      </div>
-
+      <p><a href="#/dashboard">View the User Dashboard</a></p>
+      <p><a href="#/review">View the Survey</a></p>
       
-
-      <p>Add Question: <input type="text" name="question1" ng-model="question1"></input> <button class="btn btn-sm btn-primary" ng-click="submitQuestion()">Add Question</button></p>
-      <h2>Current Survey Questions</h2>
-      <p>Question 1: Tell us a general description of your experience. <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p><button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p>Question 2: How was your interactions with our staff? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p> <button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p>Question 3: What do you not like about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p> <button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p></p>
     </div>
 
 
