@@ -31,7 +31,7 @@ angular.module('angularAppApp')
       surveyResponses.push({ 
         'question1': question1, 
         'question2': question2,
-        'question3': question3  
+        'question3': question3 
       });
 
       console.log("survey submitted")

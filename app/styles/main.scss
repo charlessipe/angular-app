@@ -89,3 +89,20 @@ body {
     border-bottom: 0;
   }
 }
+
+.navbar {
+  background-color: #008CBA;
+  border-bottom: 5px solid #009CBA;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.footer {
+  background-color: #EAE3CB;
+}
