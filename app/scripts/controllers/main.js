@@ -23,6 +23,9 @@ angular.module('angularAppApp')
 
     var surveyResponses = firebase.database().ref();
 
+    var businessProfile = firebase.database().ref("businessProfile/signature-pointe"); 
+
+    /*
     $scope.submitSurvey = function(){
       var question1 = $scope.question1;
       var question2 = $scope.question2;
@@ -35,8 +38,44 @@ angular.module('angularAppApp')
       });
 
       console.log("survey submitted")
-    }
+    } */
     
+
+    $scope.submitAnswers = function(){
+      businessProfile.push({
+        'name': "Signature Pointe",
+        'code': "12345",
+        'question1': "It was awesome",
+        'question2': "I will be back",
+        'question3': "I highly recommend this business",
+        'firstName': "First Name",
+        'lastName': "Last Name",
+        'address': "1234 Madison Ave. Newyork, NY 56123"
+
+      })
+
+      console.log("The first answer: " + $scope.question1);
+      console.log("The second answer: " + $scope.question2);
+      console.log("First name: " + $scope.firstName);
+
+    }
+
+    // Get the business name from Firebase
+    $scope.getBusinessName = function(){
+      surveyResponses.once("value")
+        .then(function(snapshot) {
+          //var firstName = snapshot.child("businessProfile/signature-pointe").val(); // "Ada"
+          var businessName = snapshot.child("businessProfile").child("signature-pointe").child("-KOvfBfl4zb_dXDKS_k6").child("name").val(); // "Lovelace"
+
+          console.log(businessName);
+          return businessName;
+        });
+        
+    }
+    var currentBusinessName = $scope.getBusinessName();
+    console.log(currentBusinessName);
+
+
 
 
     //var ref = new Firebase("https://survey-pop.firebaseio.com/");
