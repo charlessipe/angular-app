@@ -11,7 +11,7 @@
 angular.module('angularAppApp')
   .controller('MainCtrl', function ($scope, $http, current, places, $firebaseObject) {  
 
-    /*
+
     // Firebase config
     var config = {
       apiKey: "apiKey",
@@ -22,27 +22,18 @@ angular.module('angularAppApp')
     // Initialize Firebase
     firebase.initializeApp(config);
 
-    var surveyResponses = firebase.database().ref();
-    */
+    
+
 
     /*
-    // Get the business name from Firebase
-    $scope.getBusinessName = function(){
-      surveyResponses.once("value")
-        .then(function(snapshot) {
-          //var firstName = snapshot.child("businessProfile/signature-pointe").val(); // "Ada"
-          var businessName = snapshot.child("businessProfile").child("signature-pointe").child("-KOvfBfl4zb_dXDKS_k6").child("name").val(); // "Lovelace"
+    var surveyResponses = firebase.database().ref();
+    
 
-          console.log(businessName);
-          return businessName;
-        });
-        
-    }
-    var currentBusinessName = $scope.getBusinessName();
-    console.log("The current business name is:" + currentBusinessName); // undefined
+    
+    
 
 
-    // get the survey code from 
+    // get the survey code from Firebase
 
     $scope.getSurveyCode = function(){
       surveyResponses.once("value")

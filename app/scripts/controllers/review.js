@@ -9,16 +9,6 @@
  */
 angular.module('angularAppApp')
   .controller('ReviewCtrl', function ($scope, $firebaseObject) {
-    
-    // Firebase config
-    var config = {
-      apiKey: "apiKey",
-      authDomain: "projectId.firebaseapp.com",
-      databaseURL: "https://survey-pop.firebaseio.com/"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(config);
 
     // cache Firebase reference
     var surveyResponses = firebase.database().ref();
