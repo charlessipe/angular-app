@@ -17,21 +17,25 @@ angular.module('angularAppApp')
 
     $scope.robot = "I am Mr. Robot";
 
+    $scope.businessName = "Signature Pointe";
+
     var surveyResponses = firebase.database().ref();
 
-    // Get the business name from Firebase
-    $scope.getBusinessName = function(){
-      surveyResponses.once("value")
-        .then(function(snapshot) {
-          //var firstName = snapshot.child("businessProfile/signature-pointe").val(); // "Ada"
-          var businessName = snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "Lovelace"
+    // Event handler to get business name from Firebase
+    var eventHandler = function(snapshot) {
+    $scope.theBusinessName =  snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "Lovelace"
+    };
 
-          console.log(businessName);
-          return businessName;
-        });
-        
-    }
-    var currentBusinessName = $scope.getBusinessName();
-    console.log("The current business name is:" + currentBusinessName); // undefined
+    // tell surveyResponses to listen for the "value" event and then call the success callback, and then call another function where console.log will show the value of 
+    // $scope.currentBusinessName to verify that the snapshot data is stored there
 
-  });
+    surveyResponses.once("value").
+      then(eventHandler).
+      then(function() {
+        console.log("I got the business name: " + $scope.theBusinessName); // should log the value stored in the $scope property by the event handler   
+        $scope.$apply(function(){});
+      });
+
+    
+
+    });
