@@ -15,7 +15,7 @@ angular.module('angularAppApp')
 
     $scope.getFormValues = function(){
 
-      surveyResponses.child("businessProfile").child("signature-pointe").push({
+      surveyResponses.child("businessProfile").child("signature-pointe").child("surveyAnswers").push({
         'name': "Signature Pointe",
         'code': $scope.surveyCode,
         'question1': $scope.question1,
