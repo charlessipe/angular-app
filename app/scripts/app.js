@@ -40,6 +40,11 @@ angular
         controller: 'DashboardCtrl',
         controllerAs: 'dashboard'
       })
+      .when('/mainvariation', {
+        templateUrl: 'views/mainvariation.html',
+        controller: 'MainvariationCtrl',
+        controllerAs: 'mainvariation'
+      })
       .otherwise({
         redirectTo: '/'
       });

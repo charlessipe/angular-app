@@ -36,7 +36,12 @@ angular.module('angularAppApp')
         $scope.$apply(function(){});
       });
 
-
+    $scope.submitQuestion = function(){
+      surveyResponses.child("businessProfile").child("signature-pointe").child("questions").push({
+        'question': $scope.addQuestion,
+        'question2': "Hi"
+      })
+    }
 
 
     });
