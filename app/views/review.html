@@ -22,8 +22,14 @@
 
     <input type="submit" id="submit" value="Submit" />Submit</input>
     <p>{{surveyCode}} {{question1}} {{question2}} {{question3}} {{firstName}} {{lastName}} {{address}}</p>
-    <p>{{ninja}}</p>
-    <p>{{currentCode}}</p>
+    
+    <div ng-show="wrongSurveyCode" class="alert alert-danger">
+      <strong>Wrong Survey Code</strong> Please enter the correct survey code to submit this survey .
+    </div>
+    <div ng-show="surveySubmitSuccess" class="alert alert-success">
+      <strong>Thank you! Survey submitted successfully</strong> Look for your gift card in 1-2 weeks.
+    </div>
+
   </form>
 
   <p>Check out our reviews on Google Places and Yelp.</p>

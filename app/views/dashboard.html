@@ -6,8 +6,33 @@
       <h2>Find Out What Your Customers Are Thinking</h2>
       <p>Log In - Register</p>
       <p>Your Business Name: <input type="text" name="businessName" ng-model="theBusinessName"></input> <button class="btn btn-sm btn-primary" ng-click="changeBusiness()">Edit</button></p>
-      <p><strong>Google Places Rating:</strong> {{places.result.rating}}</p>
-      <p><strong>Latest Google Reviews:</strong><p> 
+
+      <p>Add Question: <input type="text" name="question1" ng-model="question1"></input> <button class="btn btn-sm btn-primary" ng-click="submitQuestion()">Add Question</button></p>
+      <h2>Current Survey Questions</h2>
+      <h3>Question 1: Tell us a general description of your experience. <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+      <ul ng-repeat="answer in surveyAnswers">
+        <li>{{answer.question1}}</li>
+      </ul>
+
+      <h3>Question 2: How was your interactions with our staff? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+      <ul ng-repeat="answer in surveyAnswers">
+        <li>{{answer.question2}}</li>
+      </ul>
+
+      <h3>Question 3: What do you not like about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3> 
+      <p></p>
+      <ul ng-repeat="answer in surveyAnswers">
+        <li>{{answer.question3}}</li>
+      </ul>
+
+      <h3>Question 4: What do you <strong>dislike</strong> about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+      <ul ng-repeat="answer in surveyAnswers">
+        <li>{{answer.question4}}</li>
+      </ul>
+      
+
+      <h3>Google Places Rating: {{places.result.rating}}</h3>
+      <h3><strong>Latest Google Reviews:</strong></h3> 
       <div class="panel panel-info">
         <div class="panel-body">
           Review
@@ -45,29 +70,8 @@
 
       
 
-      <p>Add Question: <input type="text" name="question1" ng-model="question1"></input> <button class="btn btn-sm btn-primary" ng-click="submitQuestion()">Add Question</button></p>
-      <h2>Current Survey Questions</h2>
-      <p>Question 1: Tell us a general description of your experience. <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p><button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p>Question 1 Answers</p>
-      <ul ng-repeat="answer in surveyAnswers">
-        <li>{{answer.question1}}</li>
-      </ul>
+      
 
-      <p>Question 2: How was your interactions with our staff? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p> <button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p>Question 2 Answers</p>
-      <ul ng-repeat="answer in surveyAnswers">
-        <li>{{answer.question2}}</li>
-      </ul>
-
-      <p>Question 3: What do you not like about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit</button></p> <button class="btn btn-sm btn-primary" >Show Responses</button>
-      <p></p>
-      <p>Question 3 Answers</p>
-      <ul ng-repeat="answer in surveyAnswers">
-        <li>{{answer.question3}}</li>
-      </ul>
-
-      {{theBusinessName}}
-      {{surveyAnswers[0].question1}}
     </div>
 
 
