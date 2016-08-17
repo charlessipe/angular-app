@@ -21,7 +21,7 @@ angular.module('angularAppApp')
 
     // Event handler to get business name from Firebase
     var eventHandler = function(snapshot) {
-      $scope.theBusinessName =  snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "Lovelace"
+      $scope.theBusinessName =  snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "The Business Name"
       $scope.surveyAnswers =  snapshot.child("businessProfile").child("signature-pointe").child("surveyAnswers").val(); // "Signature Pointe Firebase object
     };
 
@@ -38,9 +38,9 @@ angular.module('angularAppApp')
 
     $scope.submitQuestion = function(){
       surveyResponses.child("businessProfile").child("signature-pointe").child("questions").push({
-        'question': $scope.addQuestion,
-        'question2': "Hi"
+        'question': $scope.addQuestion
       })
+      $scope.addQuestion = '';
     }
 
 
