@@ -1,6 +1,6 @@
 
 
-  <div class="row">
+  <div ng-init="loadData" class="row">
     <div class="col-sm-12">
       <h1>Survey Pop User Dashboard</h1>
       <h2>Find Out What Your Customers Are Thinking</h2>
@@ -9,30 +9,30 @@
 
       <p>Add Question: <input type="text" name="question1" ng-model="addQuestion"></input> <button class="btn btn-sm btn-primary" ng-click="submitQuestion()">Add Question</button></p>
       <h2>Current Survey Questions</h2>
-      <h3>Question 1: Tell us a general description of your experience. <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+
+      <h3>Question 1: {{theQuestions["-KPPWU0qV0juF_G6yKTL"].question}} <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
       <ul ng-repeat="answer in surveyAnswers">
         <li>{{answer.question1}}</li>
       </ul>
 
-      <h3>Question 2: How was your interactions with our staff? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+      <h3>Question 2: {{theQuestions["-KPPWWn3eN9BKeOJOJuZ"].question}} <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
       <ul ng-repeat="answer in surveyAnswers">
         <li>{{answer.question2}}</li>
       </ul>
 
-      <h3>Question 3: What do you not like about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3> 
+      <h3>Question 3: {{theQuestions["-KPPWZAuG2_Iwmim9mQI"].question}} <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3> 
       <p></p>
       <ul ng-repeat="answer in surveyAnswers">
         <li>{{answer.question3}}</li>
       </ul>
 
-      <h3>Question 4: What do you <strong>dislike</strong> about living here? <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
+      <h3>Question 4: {{theQuestions["-KPPWbaEwFxkpV4PiC-R"].question}} <input type="text" name="businessName" ng-model="currentQuestion"></input> <button class="btn btn-sm btn-primary" >Edit Question</button></h3>
       <ul ng-repeat="answer in surveyAnswers">
         <li>{{answer.question4}}</li>
       </ul>
 
-
       <h3>Google Places Rating: {{places.result.rating}}</h3>
-      <h3><strong>Latest Google Reviews:</strong></h3> 
+      <h3><strong>Latest Google Reviews for {{theBusinessName}}:</strong></h3> 
       <div class="panel panel-info">
         <div class="panel-body">
           Review

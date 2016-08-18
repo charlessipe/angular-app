@@ -21,8 +21,9 @@ angular.module('angularAppApp')
 
     // Event handler to get business name from Firebase
     var eventHandler = function(snapshot) {
-      $scope.theBusinessName =  snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "The Business Name"
-      $scope.surveyAnswers =  snapshot.child("businessProfile").child("signature-pointe").child("surveyAnswers").val(); // "Signature Pointe Firebase object
+      $scope.theBusinessName = snapshot.child("businessProfile").child("signature-pointe").child("businessName").val(); // "The Business Name"
+      $scope.surveyAnswers = snapshot.child("businessProfile").child("signature-pointe").child("surveyAnswers").val(); // "Signature Pointe Firebase object
+      $scope.theQuestions = snapshot.child("businessProfile").child("signature-pointe").child("questions").val(); // "The Questions"
     };
 
     // tell surveyResponses to listen for the "value" event and then call the success callback, and then call another function where console.log will show the value of 
@@ -31,10 +32,13 @@ angular.module('angularAppApp')
     surveyResponses.once("value").
       then(eventHandler).
       then(function() {
-        console.log("I got the business name: " + $scope.theBusinessName); // should log the value stored in the $scope property by the event handler   
+        console.log($scope.theBusinessName); // should log the value stored in the $scope property by the event handler   
         console.log($scope.surveyAnswers);
-        $scope.$apply(function(){});
+        console.log($scope.theQuestions);
+        console.log($scope.theQuestions.length);
+        $scope.$apply();
       });
+
 
     $scope.submitQuestion = function(){
       surveyResponses.child("businessProfile").child("signature-pointe").child("questions").push({
