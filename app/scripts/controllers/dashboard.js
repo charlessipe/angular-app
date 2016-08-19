@@ -15,7 +15,7 @@ angular.module('angularAppApp')
       'Karma'
     ];
 
-    $scope.businessName = "Signature Pointe";
+    $scope.businessName = "Acme Company"; // not used?
 
     var surveyResponses = firebase.database().ref();
 
@@ -35,10 +35,19 @@ angular.module('angularAppApp')
         console.log($scope.theBusinessName); // should log the value stored in the $scope property by the event handler   
         console.log($scope.surveyAnswers);
         console.log($scope.theQuestions);
-        console.log($scope.theQuestions.length);
+        $scope.firstQuestion = $scope.theQuestions[Object.keys($scope.theQuestions)[0]].question; // cache the first question
+        $scope.secondQuestion = $scope.theQuestions[Object.keys($scope.theQuestions)[1]].question; // cache the second question
+        $scope.thirdQuestion = $scope.theQuestions[Object.keys($scope.theQuestions)[2]].question; // cache the third question
+        $scope.fourthQuestion = $scope.theQuestions[Object.keys($scope.theQuestions)[3]].question; // cache the fourth question
         $scope.$apply();
+
+        
       });
 
+
+    //var obj = { first: 'someVal' };
+    //obj[Object.keys(obj)[0]]; //returns 'someVal'
+    //$scope.theQuestions[Object.keys(obj)[0]];
 
     $scope.submitQuestion = function(){
       surveyResponses.child("businessProfile").child("signature-pointe").child("questions").push({
