@@ -22,8 +22,22 @@ angular.module('angularAppApp')
     // Initialize Firebase
     firebase.initializeApp(config);
 
-    
+    $scope.createUser = function(){
+      var email = $scope.userEmail;
+      var password = $scope.userPassword;
 
+      console.log(email);
+      console.log(password);
+
+      firebase.auth().createUserWithEmailAndPassword("csipe84@gmail.com", "popcorn").catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        consoloe.log(errorMessage);
+        // ...
+      });
+    }
 
     /*
     var surveyResponses = firebase.database().ref();
