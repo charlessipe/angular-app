@@ -45,6 +45,11 @@ angular
         controller: 'MainvariationCtrl',
         controllerAs: 'mainvariation'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
       .otherwise({
         redirectTo: '/'
       });
