@@ -51,9 +51,6 @@ angular.module('angularAppApp')
     }).then(function(users) {  // then console.log login email and localId
       console.log(users.uid);
       console.log(users.email);
-      $scope.currentUserId = users.uid;
-      $scope.currentUserEmail = users.email;
-      $scope.$apply();
     });
   } // end logInUser
 

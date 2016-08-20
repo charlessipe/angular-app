@@ -22,7 +22,20 @@ angular.module('angularAppApp')
     // Initialize Firebase
     firebase.initializeApp(config);
 
-    
+    // Check login status
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user);
+        $scope.currentUserEmail = user.email;
+        $scope.currentUserId = user.uid;
+        console.log($scope.currentUserEmail);
+        console.log($scope.currentUserId);
+        $scope.$apply();
+      } else {
+        console.log("Please log into your account");
+      }
+    });
     
 
 

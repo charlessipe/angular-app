@@ -2,6 +2,9 @@
 
   <div ng-init="loadData" class="row">
     <div class="col-sm-12">
+      <div class="alert alert-success" ng-show="currentUserEmail" role="alert">You are logged in as {{currentUserEmail}}</div>
+      <div class="alert alert-danger" ng-show="!currentUserEmail" role="alert">You are not logged in. Log in <a href="#">here</a>.</div>
+
       <h1>Survey Pop User Dashboard</h1>
       <h2>Find Out What Your Customers Are Thinking</h2>
       <p>Your Business Name: <input type="text" name="businessName" ng-model="theBusinessName"></input> <button class="btn btn-sm btn-primary" ng-click="changeBusiness()">Edit</button></p>
