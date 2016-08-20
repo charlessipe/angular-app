@@ -6,7 +6,7 @@
           <h3 class="panel-title">Log In</h3>
         </div>
         <div class="panel-body">
-          <form>
+          <form ng-submit="logInUser()" ng-submit="getAuth()">
             <p>Email: <input type="text" ng-model="loginEmail" placeholder="email"></input> Password: <input type="text" ng-model="loginPassword" placeholder="password"></input> <input type="submit" id="submit" value="Submit" /></input> </p> 
           </form>
         </div>
@@ -29,6 +29,6 @@
         </div>
       </div>
 
-      <p>{{userEmail}}</p>
-      <p>{{userPassword}}</p>
+      <p>{{currentUserId}}</p>
+      <p>{{currentUserEmail}}</p>
       

@@ -14,9 +14,9 @@ angular.module('angularAppApp')
 
     // Firebase config
     var config = {
-      apiKey: "apiKey",
-      authDomain: "projectId.firebaseapp.com",
-      databaseURL: "https://survey-pop.firebaseio.com/"
+      apiKey: "AIzaSyBEt5kwNoMYKzs6FWjS-rbgPQEhiGdofwc",
+      authDomain: "survey-pop.firebaseapp.com",
+      databaseURL: "https://survey-pop.firebaseio.com"
     };
 
     // Initialize Firebase
