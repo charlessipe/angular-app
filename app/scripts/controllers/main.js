@@ -31,22 +31,15 @@ angular.module('angularAppApp')
         $scope.currentUserId = user.uid;
         console.log($scope.currentUserEmail);
         console.log($scope.currentUserId);
+        //$scope.permissions(); // call permissions function
         $scope.$apply();
       } else {
         console.log("Please log into your account");
       }
     });
-    
-
-
 
     /*
     var surveyResponses = firebase.database().ref();
-    
-
-    
-    
-
 
     // get the survey code from Firebase
 
