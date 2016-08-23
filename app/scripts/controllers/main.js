@@ -9,7 +9,7 @@
  */
 
 angular.module('angularAppApp')
-  .controller('MainCtrl', function ($scope, $http, current, places, $firebaseObject) {  
+  .controller('MainCtrl', function ($scope, $http, current, places, $firebaseObject, $q) {  
 
 
     // Firebase config
@@ -22,21 +22,32 @@ angular.module('angularAppApp')
     // Initialize Firebase
     firebase.initializeApp(config);
 
-    // Check login status
 
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user);
-        $scope.currentUserEmail = user.email;
-        $scope.currentUserId = user.uid;
-        console.log($scope.currentUserEmail);
-        console.log($scope.currentUserId);
-        //$scope.permissions(); // call permissions function
-        $scope.$apply();
-      } else {
-        console.log("Please log into your account");
-      }
+    // Check login status function
+
+    $scope.checkLoginStatus = function(){
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log(user);
+          $scope.currentUserEmail = user.email;
+          $scope.currentUserId = user.uid;
+          console.log($scope.currentUserEmail);
+          console.log($scope.currentUserId);
+          //$scope.permissions(); // call permissions function
+          $scope.$apply();
+        } else {
+          console.log("Please log into your account");
+        }
+      });
+    }() // end checkLoginStatus 
+
+    /*
+    var promise = $scope.checkLoginStatus();
+      
+    promise.then(function(){
+      console.log("The currentUserId is: " + $scope.currentUserId);  
     });
+    */
 
     /*
     var surveyResponses = firebase.database().ref();
@@ -65,19 +76,29 @@ angular.module('angularAppApp')
     //$scope.data = surveyResponses;
 
 
+    // async issue here
+    setTimeout(function(){
+      console.log("The currentUserId is: " + $scope.currentUserId);
 
-    $scope.current = current.query();
+      if($scope.currentUserId == "c4fede9a-73e2-4083-a120-1eb9078c279b"){  // conditional to set currentPlaceId
+        $scope.currentPlaceId = "ChIJNwF_A-FbkFQRDDk_Nysa1Dg";
+      }
+      else if ($scope.currentUserId == "abc"){
+        $scope.currentPlaceId = "another place Id";
+      }
+      else {
+        $scope.currentPlaceId = "hi";
+      }
 
-    $scope.places = places.query();
+      var currentPlaceId = $scope.currentPlaceId;
 
-    console.log($scope.places);
+      console.log("currentPlaceId is: " + currentPlaceId);
 
-    $scope.refreshCurrent = function(){
-        $scope.current = current.query({
-            location: $scope.location
-        });
+      $scope.places = places.query({placeid: currentPlaceId});
 
-  };
+      console.log($scope.places);
+
+    },1000);
 
 
   });

@@ -9,13 +9,9 @@
  */
 angular.module('angularAppApp')
   .controller('DashboardCtrl', function ($scope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
-    var surveyResponses = firebase.database().ref();
+
+    var surveyResponses = firebase.database().ref();  // initiate Firebase reference
 
     // Event handler to get business name from Firebase
     var eventHandler = function(snapshot) {
