@@ -17,7 +17,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase'
-  ])
+  ]) 
+  /*.config(function (AnalyticsProvider) {
+  // Add configuration code as desired - see below 
+  })*/
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -54,3 +58,4 @@ angular
         redirectTo: '/'
       });
   });
+

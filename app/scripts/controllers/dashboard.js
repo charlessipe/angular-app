@@ -19,8 +19,8 @@ angular.module('angularAppApp')
       if($scope.currentUserId == "c4fede9a-73e2-4083-a120-1eb9078c279b"){
         $scope.currentCompanyName = "signature-pointe";
       }
-      else if ($scope.currentUserId == "abc"){
-        $scope.currentCompanyName = "hi";
+      else if ($scope.currentUserId == "h61hpzK50mU4j6jWT28ELPAqguZ2"){
+        $scope.currentCompanyName = "the-retreat";
       }
       else {
         $scope.currentCompanyName = "bye";

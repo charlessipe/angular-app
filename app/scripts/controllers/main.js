@@ -11,6 +11,7 @@
 angular.module('angularAppApp')
   .controller('MainCtrl', function ($scope, $http, current, places, $firebaseObject, $q) {  
 
+    
 
     // Firebase config
     var config = {

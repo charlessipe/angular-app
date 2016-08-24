@@ -78,4 +78,15 @@ angular.module('angularAppApp')
 
   }
 
+  $scope.logOut = function(){
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }, function(error) {
+      // An error happened.
+    });
+
+    console.log("Logging out");
+  }
+
+
   });
