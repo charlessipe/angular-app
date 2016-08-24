@@ -54,6 +54,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+      .when('/retreatsurvey', {
+        templateUrl: 'views/retreatsurvey.html',
+        controller: 'RetreatsurveyCtrl',
+        controllerAs: 'retreatsurvey'
+      })
       .otherwise({
         redirectTo: '/'
       });
