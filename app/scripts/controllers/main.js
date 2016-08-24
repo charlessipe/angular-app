@@ -84,8 +84,8 @@ angular.module('angularAppApp')
       if($scope.currentUserId == "c4fede9a-73e2-4083-a120-1eb9078c279b"){  // conditional to set currentPlaceId
         $scope.currentPlaceId = "ChIJNwF_A-FbkFQRDDk_Nysa1Dg";
       }
-      else if ($scope.currentUserId == "abc"){
-        $scope.currentPlaceId = "another place Id";
+      else if ($scope.currentUserId == "h61hpzK50mU4j6jWT28ELPAqguZ2"){
+        $scope.currentPlaceId = "ChIJf17A5sP7kFQRC-KFpzq0J64";
       }
       else {
         $scope.currentPlaceId = "hi";

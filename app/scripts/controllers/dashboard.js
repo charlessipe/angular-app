@@ -26,6 +26,7 @@ angular.module('angularAppApp')
         $scope.currentCompanyName = "bye";
       }
 
+      console.log("currentCompanyName is: " + $scope.currentCompanyName);
       var theCurrentCompany = $scope.currentCompanyName;
 
       $scope.theBusinessName = snapshot.child("businessProfile").child(theCurrentCompany).child("businessName").val(); // "The Business Name"
@@ -56,7 +57,7 @@ angular.module('angularAppApp')
     //$scope.theQuestions[Object.keys(obj)[0]];
 
     $scope.submitQuestion = function(){
-      surveyResponses.child("businessProfile").child("signature-pointe").child("questions").push({
+      surveyResponses.child("businessProfile").child("the-retreat").child("questions").push({  //make this dynamic
         'question': $scope.addQuestion
       })
       $scope.addQuestion = '';
