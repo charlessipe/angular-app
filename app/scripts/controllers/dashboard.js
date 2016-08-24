@@ -22,6 +22,9 @@ angular.module('angularAppApp')
       else if ($scope.currentUserId == "h61hpzK50mU4j6jWT28ELPAqguZ2"){
         $scope.currentCompanyName = "the-retreat";
       }
+      else if ($scope.currentUserId == "my5JiNHLWCQ9iCMik6XZEotqhAn1"){
+        $scope.currentCompanyName = "cambridge-apartments";
+      }
       else {
         $scope.currentCompanyName = "bye";
       }
@@ -57,7 +60,7 @@ angular.module('angularAppApp')
     //$scope.theQuestions[Object.keys(obj)[0]];
 
     $scope.submitQuestion = function(){
-      surveyResponses.child("businessProfile").child("the-retreat").child("questions").push({  //make this dynamic
+      surveyResponses.child("businessProfile").child("cambridge-apartments").child("questions").push({  //make this dynamic
         'question': $scope.addQuestion
       })
       $scope.addQuestion = '';

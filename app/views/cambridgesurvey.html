@@ -1,0 +1,35 @@
+<div class="row">
+<h2>Complete the Survey Questions</h2>
+  <form ng-submit="submitAnswers(); getFormValues();">
+    <p>Enter Your Survey Code <input type="text" name="surveyCode" ng-model="surveyCode"></input></p>
+
+    <p>Question 1: Tell us a general description of your experience.</p> 
+    <input type="text" class="form-control" ng-model="question1" placeholder="question 1" aria-describedby="basic-addon1"></input>
+
+    <p>Question 2: How was your interactions with our staff? </p> 
+    <input type="text" class="form-control" ng-model="question2" placeholder="question 2" aria-describedby="basic-addon1"></input>
+
+    <p>Question 3: What do you <strong>like</strong> about living here?</p> 
+    <input type="text" class="form-control" ng-model="question3" placeholder="question 3" aria-describedby="basic-addon1"></input>
+
+    <p>Question 4: What do you <strong>dislike</strong> about living here?</p> 
+    <input type="text" class="form-control" ng-model="question4" placeholder="question 4" aria-describedby="basic-addon1"></input>
+    <p>Enter your name and mailing address so we can mail you a $5 Starbucks Card.</p>
+    <p>First Name <input type="text" name="surveyCode" ng-model="firstName"></input> </p>
+    <p>Last Name <input type="text" name="surveyCode" ng-model="lastName"></input></p>
+    <p>Mailing Address (to receive your $5 Starbucks Card) <input type="text" class="form-control" placeholder="address" aria-describedby="basic-addon1" ng-model="address"></input>
+
+    <input type="submit" id="submit" value="Submit" />Submit</input>
+    <p>{{surveyCode}} {{question1}} {{question2}} {{question3}} {{firstName}} {{lastName}} {{address}}</p>
+    
+    <div ng-show="wrongSurveyCode" class="alert alert-danger">
+      <strong>Wrong Survey Code</strong> Please enter the correct survey code to submit this survey .
+    </div>
+    <div ng-show="surveySubmitSuccess" class="alert alert-success">
+      <strong>Thank you! Survey submitted successfully</strong> Look for your gift card in 1-2 weeks.
+    </div>
+
+  </form>
+
+  <p>Check out our reviews on Google Places and Yelp.</p>
+</div> 
